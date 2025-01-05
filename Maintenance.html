@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .status-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .status-table th, .status-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .status-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .status-table td {
+            background-color: #f9f9f9;
+        }
+        .status-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .status-table tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Maintenance Status</h1>
+    <p>This page provides the maintenance status for various appliances.</p>
+
+    <table class="status-table">
+        <thead>
+            <tr>
+                <th>Appliance</th>
+                <th>Status</th>
+                <th>ETA on Repair</th>
+                <th>Parts Ordered</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Washing Machine</td>
+                <td>Under Repair</td>
+                <td>2 Days</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Dryer</td>
+                <td>Operational</td>
+                <td>N/A</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Washing Machine</td>
+                <td>Waiting for Parts</td>
+                <td>1 Week</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Dryer</td>
+                <td>Out of Service</td>
+                <td>3 Days</td>
+                <td>No</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

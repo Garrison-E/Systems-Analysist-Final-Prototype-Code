@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5a52d1;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Add a New Product</h1>
+    </header>
+    <div class="container">
+        <form id="productForm">
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" name="productName" placeholder="Enter product name" required>
+            
+            <label for="productCategory">Category</label>
+            <select id="productCategory" name="productCategory" required>
+                <option value="" disabled selected>Select category</option>
+                <option value="candy">Candy</option>
+                <option value="soda">Soda</option>
+                <option value="soap">Soap</option>
+            </select>
+            
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity" required>
+            
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Product Manager Co.</p>
+    </footer>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const productName = document.getElementById('productName').value;
+            const productCategory = document.getElementById('productCategory').value;
+            const quantity = document.getElementById('quantity').value;
+
+            alert(`Product Added:\nName: ${productName}\nCategory: ${productCategory}\nQuantity: ${quantity}`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>

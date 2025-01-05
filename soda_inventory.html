@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soda Inventory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f9ff;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .inventory-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .inventory-item:last-child {
+            border-bottom: none;
+        }
+        .item-name {
+            font-weight: bold;
+        }
+        .item-quantity {
+            color: #007BFF;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Soda Inventory</h1>
+    </header>
+    <div class="container">
+        <div class="inventory-item">
+            <div class="item-name">Cola</div>
+            <div class="item-quantity">100</div>
+        </div>
+        <div class="inventory-item">
+            <div class="item-name">Orange Soda</div>
+            <div class="item-quantity">75</div>
+        </div>
+        <div class="inventory-item">
+            <div class="item-name">Root Beer</div>
+            <div class="item-quantity">50</div>
+        </div>
+        <div class="inventory-item">
+            <div class="item-name">Lemon-Lime Soda</div>
+            <div class="item-quantity">120</div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Fizzy Drinks Co.</p>
+    </footer>
+</body>
+</html>

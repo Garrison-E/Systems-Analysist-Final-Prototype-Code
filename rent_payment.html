@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+        input, button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #555;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rent Payment</h1>
+    </header>
+    <div class="container">
+        <form id="rentForm">
+            <label for="renterName">Renter's Name</label>
+            <input type="text" id="renterName" name="renterName" placeholder="Enter renter's name" required>
+            
+            <label for="rentalPeriod">Rental Period (Months)</label>
+            <input type="number" id="rentalPeriod" name="rentalPeriod" min="1" placeholder="Enter rental period" required>
+            
+            <label for="monthlyRent">Monthly Rent Amount ($)</label>
+            <input type="number" id="monthlyRent" name="monthlyRent" min="0" step="0.01" placeholder="Enter monthly rent" required>
+            
+            <button type="button" onclick="calculateRent()">Calculate Total Rent</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Rent Manager</p>
+    </footer>
+
+    <script>
+        function calculateRent() {
+            const renterName = document.getElementById('renterName').value;
+            const rentalPeriod = parseInt(document.getElementById('rentalPeriod').value);
+            const monthlyRent = parseFloat(document.getElementById('monthlyRent').value);
+
+            if (!renterName || isNaN(rentalPeriod) || isNaN(monthlyRent)) {
+                alert('Please fill in all fields correctly.');
+                return;
+            }
+
+            const totalRent = (rentalPeriod * monthlyRent).toFixed(2);
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `Total Rent for ${renterName}: $${totalRent}`;
+        }
+    </script>
+</body>
+</html>
